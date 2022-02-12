@@ -8,6 +8,176 @@
     <title>Document</title>
 
     <script>
+        const anio = 2022;
+        //comentarios
+        /*comentario de 
+        mas 
+        de una linea*/
+        //El tipo de dato es definido por su contenido
+        var uno_numero = 1;
+        var uno_texto = "uno";
+
+        //mensajes en consola
+        console.log("Hola mundo");
+        console.log(uno_numero);
+        console.log(uno_texto);
+        //mensaje de alerta, requiere la intervencion del usuario
+        //alert("clase de javascript");
+
+        //solicitar y capturar informacion ingresada por el usuario
+        /*
+                var nombre = prompt("ingresa tu nombre");
+                var apellido = prompt("ingresa tu apellido");
+                var edad = prompt("Ingrese su edad");
+                console.log("Hola " + nombre + " " + apellido + ", de edad " + edad);
+                document.write("Hola <b>" + nombre + "</b> <i>" + apellido + "</i>, de edad " + edad);
+                document.write("<br>");
+                */
+        /*
+                var numero1 = parseInt(prompt("Ingrese numero 1"));
+                var numero2 = prompt("Ingrese numero 2");
+                numero2 = parseInt(numero2);
+                console.log(numero1 + numero2);
+                alert(numero1 + numero2);
+
+                var promedio = (numero1 + numero2) / 2;
+                console.log("El promedio es: " + promedio);
+        */
+        /*       
+                var pulgada = prompt("Ingrese valor a convertir");
+                var resultado = parseInt(pulgada) * 0.254;
+
+                document.write("El resultado es : <u>" + parseInt(pulgada) * 0.254 + "</u>");
+                console.log('El resultado es : ' + parseInt(pulgada) * 0.254);
+                //alert("El resultado es : " + parseInt(pulgada) * 0.254);
+                alert(`El resultado es ${resultado}`);
+        */
+        /*
+                var dia = prompt("Ingrese un numero del 1 al 7");
+                dia = parseInt(dia);
+                switch (dia) {
+                    case 1:
+                        console.log("Dia Lunes");
+                        document.write("Dia Lunes");
+                        break;
+                    case 2:
+                        console.log("Dia Martes");
+                        document.write("Dia Martes");
+                        break;
+                    case 3:
+                        console.log("Dia Miercoles");
+                        document.write("Dia Miercoles");
+                        break
+                    case 4:
+                        console.log("Dia Jueves");
+                        document.write("Dia Jueves");
+                        break;
+                    case 5:
+                        console.log("Dia Viernes");
+                        document.write("Dia Viernes");
+                        break;
+                    case 6:
+                        console.log("Dia Sabado");
+                        document.write("Dia Sabado");
+                        break
+                    case 7:
+                        console.log("Dia Domingo");
+                        document.write("Dia Domingo");
+                        break
+                    default:
+                        console.log("Dia no encontrado");
+                        document.write("Dia no encontrado");
+                        break;
+                }
+        */
+        /*
+                if (edad >= 18) {
+                    if (edad <= 40) {
+                        if (region == 12 || region == 15) {
+                            // Persona apta para recibir el beneficio
+                        }
+                    }
+                }
+                if ((edad >= 18) && (edad <= 40) && (region == 12 || region == 15)) {
+                    // Persona apta para recibir el beneficio
+                }
+
+                var edad = parseInt(prompt("Ingrese tu edad"));
+                var respuesta = prompt("¿Quieres estudiar en Desafío Latam?");
+                respuesta = respuesta.toUpperCase();
+
+                //if ((respuesta == "si") || (respuesta == "SI") || (respuesta == "Si") || (respuesta == "sI") && (edad >= 18)) { //si SI Si sI
+                if ((respuesta == "SI") && (edad >= 18)) {
+                    console.log("Bienvenido a Desafio Latam");
+                } else if ((respuesta == "SI") && (edad < 18)) {
+                    console.log("Que bueno, pero debes estar acompañado por tu representante");
+                } else if (respuesta == "NO") {
+                    console.log("Que lastima!!!… te esperamos pronto");
+                } else {
+                    console.log("Datos errados");
+                    document.write("Datos Errados");
+                }
+        */
+        /*
+        var numero = parseInt(prompt("ingrese numero de tabla de multiplicar"));
+
+        for (var i = 1; i < 11; i++) {
+             console.log(` ${numero} x ${i} = ${numero * i}`);
+        }
+         */
+        /*
+        var numero = 0;
+        while (numero <= 20) {
+            if (numero % 2 == 0) {
+                console.log(numero);
+            }
+            numero++;
+        }
+*/
+        /*
+        var numero = 0;
+        do {
+            if (numero % 2 == 0) {
+                console.log(numero);
+            }
+            numero++;
+        } while (numero <= 20);
+        */
+        /*
+                var sumaImpares = 0; //variable = variable + algo
+                var contadorImpares = 0;
+                for (var i = 1; i <= 50; i++) {
+                    if (i % 2 != 0) { //impar
+                        sumaImpares = sumaImpares + i;
+                        contadorImpares++;
+                    }
+                }
+
+                console.log(`la suma de los ${contadorImpares} numeros impares es: ${sumaImpares}`);
+        */
+        /*
+                var edad = parseInt(prompt("Ingresa tu edad"));
+
+                function nombreFuncion(edad) {
+                    document.write("Hola, tu edad es " + edad);
+                    console.log(`tu edad es ${edad}`);
+                }
+                nombreFuncion(edad);
+                */
+        /*
+                var num1 = parseInt(prompt("Ingrese un numero"));
+                var num2 = parseInt(prompt("Ingrese segundo numero"));
+                var num3 = parseInt(prompt("Ingrese tercer numero"));
+
+                function sumaNumeros(n1, n2, n3) {
+                    //var suma = n1 + n2;
+                    //return suma; 
+                    return n1 + n2 + n3;
+                }
+
+                var resultadoSuma = sumaNumeros(num1, num2, num3);
+                document.write(`el resultado de la suma es ${resultadoSuma}`);
+                */
     </script>
 </head>
 
