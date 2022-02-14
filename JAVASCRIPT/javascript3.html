@@ -9,20 +9,20 @@
     <script>
         /*Calcular la suma de todos los términos almacenados en una variable con los datos del tipo arreglo del 1 al 9.*/
 
+
+        const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
         /*
-                const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
-                function sumaArreglo() {
-                    var suma = 0;
-                    for (var i = 0; i < numeros.length; i++) {
-                        suma = suma + numeros[i];
-                    }
-                    console.log(suma);
-                }
-                sumaArreglo();
-
-                // recursividad
-
+                        function sumaArreglo() {
+                            var suma = 0;
+                            for (var i = 0; i < numeros.length; i++) {
+                                suma = suma + numeros[i];
+                            }
+                            console.log(suma);
+                        }
+                        sumaArreglo();
+        */
+        // recursividad
+        /*
                 function sumaRecursiva() {
                     //validar tamaño
                     if (numeros.length > 0) {
@@ -39,19 +39,94 @@
 
                 var resultado = sumaRecursiva();
                 console.log(resultado);
+
+
+                //factorial de n : X! = X * (X-1)! eje; 4! = 4 * (3)!
+
+                function factorial_de_n(numero) {
+                    if (numero > 1) {
+                        return numero * factorial_de_n(numero - 1);
+                    } else {
+                        return 1;
+                    }
+                }
+
+                factorial_de_n(4);
+                var valor = 0;
+                const numeros2 = [1, 2, 3, 5, 8, 13, 21];
+
+                function restaRecursiva(numeros2) {
+                    //validar tamaño
+                    if (numeros2.length > 0) {
+                        //resolver, acceder al primer elemento
+                        //shift(), acceder al 1er elemento y eliminarlo
+                        valor = numeros2.shift();
+                        console.log(valor, numeros2);
+                        return valor + (valor - restaRecursiva(numeros2));
+                    } else {
+                        return 0;
+                    }
+                }
+                console.log(restaRecursiva(numeros2));*/
+        /*
+                var num = prompt("Ingrese un numero entero");
+                var resultado = 0;
+
+                function verificar(numero) {
+                    if (numero > 0) {
+                        resultado = "positivo";
+                    } else if (numero < 0) {
+                        resultado = "negativo";
+                    } else if (numero === 0) {
+                        resultado = "nulo";
+                    } else {
+                        resultado = "no es un número";
+                    }
+                    return resultado
+                }
+                //alert(`El numero ingresado es: ${verificar(parseInt(num))}`);
+
+                let verificar2 = (numero) => {
+                    if (numero > 0) {
+                        resultado = "positivo";
+                    } else if (numero < 0) {
+                        resultado = "negativo";
+                    } else if (numero === 0) {
+                        resultado = "nulo";
+                    } else {
+                        resultado = "no es un número";
+                    }
+                    return resultado;
+                }
+
+                console.log(' El numero ingresado es:', verificar2(parseInt(num)));
         */
+        //
+        var nombre = prompt('Ingrese nombre');
+        var edad = prompt('Ingrese edad');
 
-        //factorial de n : X! = X * (X-1)! eje; 4! = 4 * (3)!
+        let saludo = (nombre, edad) => {
+            /*
+            //ES5
+            var mensaje = nombre;
 
-        function factorial_de_n(numero) {
-            if (numero > 1) {
-                return numero * factorial_de_n(numero - 1);
+            if (edad >= 18) {
+                mensaje = mensaje + ", eres mayor de edad";
             } else {
-                return 1;
+                mensaje = mensaje + ", eres menor de edad";
+
+            }*/
+            //ES6
+            let mensaje = "";
+            if (edad >= 18) {
+                mensaje = ", eres mayor de edad";
+            } else {
+                mensaje = ", eres menor de edad";
             }
+            return `Hola ${nombre} ${mensaje}`;
         }
 
-        factorial_de_n(4);
+        console.log(saludo(nombre, parseInt(edad)));
     </script>
 </head>
 
