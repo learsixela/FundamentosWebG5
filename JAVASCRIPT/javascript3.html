@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /*Calcular la suma de todos los términos almacenados en una variable con los datos del tipo arreglo del 1 al 9.*/
+
+        /*
+                const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+                function sumaArreglo() {
+                    var suma = 0;
+                    for (var i = 0; i < numeros.length; i++) {
+                        suma = suma + numeros[i];
+                    }
+                    console.log(suma);
+                }
+                sumaArreglo();
+
+                // recursividad
+
+                function sumaRecursiva() {
+                    //validar tamaño
+                    if (numeros.length > 0) {
+                        //resolver, acceder al primer elemento
+                        //shift(), acceder al 1er elemento y eliminarlo
+                        var valor = numeros.shift();
+
+                        return valor + sumaRecursiva();
+
+                    } else {
+                        return 0;
+                    }
+                }
+
+                var resultado = sumaRecursiva();
+                console.log(resultado);
+        */
+
+        //factorial de n : X! = X * (X-1)! eje; 4! = 4 * (3)!
+
+        function factorial_de_n(numero) {
+            if (numero > 1) {
+                return numero * factorial_de_n(numero - 1);
+            } else {
+                return 1;
+            }
+        }
+
+        factorial_de_n(4);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
