@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <script>
+        const num1 = 4; //parseInt(prompt('Ingrese un numero'));
+        var num2 = parseInt(prompt('Ingrese segundo numero'));
+        var num3 = parseInt(prompt('Ingrese tercer numero'));
+
+        function sumaTres(num2, num3) {
+
+            console.log(`la suma de los tres numeros es: ${num1+num2+num3}`);
+        }
+        sumaTres(num2, num3);
+
+        const suma3 = function(num2, num3) {
+
+            return num1 + num2 + num3;
+        }
+
+        console.log("el resultado de la suma de 3 numero es: " + suma3(num2, num3));
+
+        /*
+                var numero1 = parseInt(prompt('Ingrese un numero'));
+                var numero2 = parseInt(prompt('Ingrese segundo numero'));
+                var numero3 = parseInt(prompt('Ingrese tercer numero'));
+
+                restaTresNumeros(numero1, numero2, numero3);
+
+                function restaTresNumeros(numero1, numero2, numero3) {
+                    console.log(`El resultado de la resta es: ${numero1-numero2-numero3}`);
+                }
+
+                var radio = parseInt(prompt("Ingrese Radio del cilindro"));
+                var altura = parseInt(prompt("Ingrese Altura del cilindro"));
+                volumenCilindro(radio, altura);
+
+                function volumenCilindro(radio, altura) {
+                    //PI*radio^2*altura
+                    alert("El volumen del cilindro es: " + Math.PI * Math.pow(radio, 2) * altura)
+
+                }
+                */
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
