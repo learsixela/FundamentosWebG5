@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambiarDom() {
+            //Se requiere modificar el texto asociado al elemento <p> que posea un “id” con el nombre “textoSaludo” 
+            //a: “Hola, este párrafo fue modificado”. 
+
+            var parrafo = document.getElementById("textoSaludo");
+            console.log(parrafo.innerHTML); //Soy un párrafo en un documento HTML
+            parrafo.innerHTML = "Hola, este párrafo fue modificado";
+            console.log(parrafo.innerHTML); //Hola, este párrafo fue modificado
+
+            //Igualmente,
+            //modificar los valores del elemento <input> con “id” igual a “entradaUno”, 
+            var input1 = document.getElementById("entradaUno");
+
+            //por el “value” igual a “Clic Aqui”, 
+            input1.value = "Clic Aqui";
+            //el id por “clicUno” 
+            input1.id = "clicUno";
+            //y el tipo “type” por “button”.
+            input1.type = "button";
+
+            //Además, agregar el atributo “style” con la propiedad 
+            //“color: red;
+            input1.style.color = "red";
+            //background-color: green”.
+            input1.style.backgroundColor = "green";
+        }
+    </script>
+</head>
+
+<body>
+    <div id="contenedor">
+        <div class="menu">
+            <p id="texto">Soy un párrafo en un documento HTML
+            </p>
+            <p id="textoSaludo">Soy un párrafo en un documento HTML
+            </p>
+            <input value="Correo Electrónico" id="entradaUno" type="email" />
+            <input value="Entrada de datos" id="entradaDos" type="email" />
+        </div>
+    </div>
+    <button onclick="cambiarDom()">Cambiar DOM</button>
+    <!-- <script src="js/manipularDomScript.js"></script>-->
+</body>
+
+</html>
