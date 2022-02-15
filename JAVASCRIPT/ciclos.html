@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CICLOS</title>
     <script>
-        /*Mostrar los números pares y contar los números impares
-                                                                                                mediante un ciclo for para los números comprendidos
-                                                                                                entre el 0 y el 20 (incluidos ambos), 
-                                                                                                pero cuando se llegue al número 10, el programa debe continuar y no mostrar el
-                                                                                                número en cuestión, 
-                                                                                                igualmente, cuando se llegue al número 19 el ciclo debe ser interrumpido y terminar su
-                                                                                                ejecución.
-                                                                                                */
+        //Mostrar los números pares y contar los números impares
+        //mediante un ciclo for para los números comprendidos
+        //entre el 0 y el 20 (incluidos ambos), 
+        //pero cuando se llegue al número 10, el programa debe continuar y no mostrar el
+        //número en cuestión, 
+        //igualmente, cuando se llegue al número 19 el ciclo debe ser interrumpido y terminar su
+        //ejecución.
+
 
         //for
         var numerosImpares = 0; //variable contadora
@@ -89,6 +89,61 @@
 
         document.write('<h2>numero no multiplos de 4 entre 1 y 45 </h2><br>');
         document.write('cantidad es: ', noMultiplosCuatro);
+
+        //ciclos anidados
+        //Desarrollar un programa utilizando JavaScript que
+        //permita encontrar el factorial del 1 al 10 implementando
+        //anidación de ciclos repetitivos.
+        //!x = x * !(x-1) -> 5! = 5*4*3*2*1*1
+        var resultado = 1;
+        for (let i = 1; i <= 10; i++) { // i = 3
+            for (let j = 1; j <= i; j++) { //j = 1
+                resultado = resultado * j; //rs:
+            }
+            console.log(`el factorial de ${i} es ${resultado}`); //1,2
+            resultado = 1;
+        }
+
+        //Desarrollar un programa utilizando JavaScript que
+        //permita encontrar los elementos comunes entre dos
+        //listados de números realizados con ciclos repetitivos
+        //anidados, uno va del 1 al 5 y el segundo del 1 al 10.
+
+        for (let i = 1; i <= 5; i++) { //1,2,3,4,5
+            for (let j = 1; j <= 10; j++) { //1,2,3,4,5,6,7,8,9,10
+                if (i == j) {
+                    console.log(`${i} encontrado en j`);
+                    break;
+                }
+            }
+        }
+
+        //Desarrollar un programa utilizando JavaScript partiendo
+        //del nombre específico de un estudiante, Juan.
+        //Se solicita verificar mediante un arreglo si este estudiante
+        //se encuentra en el curso de Diseño donde existe una lista
+        //de 5 estudiantes: Pedro, María, Diego, Juan y Paola.
+
+        let estudiante = "Juan";
+        let estudiantes = ["Pedro", "María", "Diego", "Juan", "Paola"];
+
+        for (let i = 0; i < estudiantes.length; i++) {
+            //estudiantes[0]; //Pedro
+            if (estudiantes[i] == estudiante) {
+                console.log('Estudiante encontrado');
+                break;
+            }
+        }
+        console.log("Fuera del For");
+
+        //tablas de multiplicar
+
+        for (let i = 1; i <= 10; i++) {
+            for (let j = 1; j <= 10; j++) {
+                console.log(`${i} * ${j} = ${i*j}`);
+            }
+            console.log("");
+        }
     </script>
 </head>
 
