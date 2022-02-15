@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CICLOS</title>
+    <script>
+        /*Mostrar los números pares y contar los números impares
+                                                                                                mediante un ciclo for para los números comprendidos
+                                                                                                entre el 0 y el 20 (incluidos ambos), 
+                                                                                                pero cuando se llegue al número 10, el programa debe continuar y no mostrar el
+                                                                                                número en cuestión, 
+                                                                                                igualmente, cuando se llegue al número 19 el ciclo debe ser interrumpido y terminar su
+                                                                                                ejecución.
+                                                                                                */
+
+        //for
+        var numerosImpares = 0; //variable contadora
+        for (let i = 0; i <= 20; i++) {
+
+            if (i == 10) {
+                continue;
+            }
+            if (i == 19) {
+                break;
+            }
+
+            if (i % 2 == 0) { //obtener pares
+                console.log('numero par', i);
+            } else {
+                numerosImpares++;
+            }
+        }
+
+        console.log(`cantidad numeros impares es ${numerosImpares}`);
+
+        numerosImpares = 0;
+        //while
+        var i = 0;
+
+        while (i <= 20) {
+            if (i == 10) {
+                console.log("i = 10");
+                i++;
+                continue;
+            }
+            if (i == 19) {
+                break;
+            }
+
+            if (i % 2 == 0) { //obtener pares
+                console.log('numero par', i);
+            } else {
+                numerosImpares++;
+            }
+            i++;
+        }
+        console.log(`cantidad numeros impares en while es ${numerosImpares}`);
+
+        //do while
+        //Se solicita mostrar los números múltiplos de cuatro y
+        //contar los números que no sean múltiplo de cuatro
+        //mediante un ciclo do-while para los números
+        //comprendidos entre el 1 y el 50 (incluidos ambos), pero
+        //cuando se llegue al número 16, el programa debe
+        //continuar y no mostrar el número en cuestión.
+        //Igualmente, cuando se llegue al número 45 el ciclo debe
+        //ser interrumpido y terminar su ejecución.
+
+        var j = 1;
+        var noMultiplosCuatro = 0;
+        do {
+            if (j == 16) {
+                j++;
+                continue;
+            }
+            if (j == 45) {
+                break;
+            }
+            if (j % 4 == 0) { //multiplos de 4
+                console.log(`numero multiplo de 4`, j)
+            } else {
+                noMultiplosCuatro++;
+            }
+            j++;
+        } while (j >= 1 && j <= 50);
+
+        document.write('<h2>numero no multiplos de 4 entre 1 y 45 </h2><br>');
+        document.write('cantidad es: ', noMultiplosCuatro);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -52,22 +52,35 @@
                 }
 
                 factorial_de_n(4);
-                var valor = 0;
-                const numeros2 = [1, 2, 3, 5, 8, 13, 21];
+                */
+        var valor = 0;
+        const numeros2 = [1, 2, 3, 5, 8, 13, 21];
 
-                function restaRecursiva(numeros2) {
-                    //validar tamaño
-                    if (numeros2.length > 0) {
-                        //resolver, acceder al primer elemento
-                        //shift(), acceder al 1er elemento y eliminarlo
-                        valor = numeros2.shift();
-                        console.log(valor, numeros2);
-                        return valor + (valor - restaRecursiva(numeros2));
-                    } else {
-                        return 0;
-                    }
-                }
-                console.log(restaRecursiva(numeros2));*/
+        function restaRecursiva() {
+            //validar tamaño
+            if (numeros2.length > 1) {
+                valor = numeros2.shift();
+                console.log(valor, numeros2);
+                return valor - restaRecursiva(numeros2);
+            } else {
+                return 0;
+            }
+        }
+        console.log('resta', restaRecursiva());
+
+        var vector = [1, 2, 3, 5, 8, 13, 21];
+        console.log("vector ", RestaVector(vector, vector.length));
+
+        function RestaVector(vector, tam) {
+            if (tam == 2)
+                return vector[1] - vector[0];
+            else {
+                vector[tam - 2] = vector[tam - 1] - vector[tam - 2];
+                return RestaVector(vector, tam - 1);
+            }
+        }
+
+
         /*
                 var num = prompt("Ingrese un numero entero");
                 var resultado = 0;
@@ -101,7 +114,7 @@
 
                 console.log(' El numero ingresado es:', verificar2(parseInt(num)));
         */
-        //
+        /*
         var nombre = prompt('Ingrese nombre');
         var edad = prompt('Ingrese edad');
 
@@ -115,7 +128,7 @@
             } else {
                 mensaje = mensaje + ", eres menor de edad";
 
-            }*/
+            }
             //ES6
             let mensaje = "";
             if (edad >= 18) {
@@ -127,6 +140,7 @@
         }
 
         console.log(saludo(nombre, parseInt(edad)));
+        */
     </script>
 </head>
 
