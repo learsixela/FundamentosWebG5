@@ -62,3 +62,13 @@ function validarPassword(pass, pass2) {
     }
 
 }
+
+var formularioLogin = document.getElementById("formularioLogin");
+
+formularioLogin.addEventListener('submit', function() {
+    validarLogin();
+});
+
+function validarLogin() {
+    alert("pendiente validar el login");
+}
