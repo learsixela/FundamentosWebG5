@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objetos</title>
+    <script>
+        //diccionario
+        //nombre: valor o clave
+        /*
+                var automovil = {
+                    marca: 'Mazda',
+                    modelo: '3 sport',
+                    patente: 'LJKH63',
+                    color: 'azul',
+                    kilometraje: 15000,
+                    usado: false,
+                    encender: function() {
+                        alert('automóvil encendido.');
+                    }
+                };
+                console.log(automovil);
+                console.log(automovil["patente"], automovil.patente);
+                console.log(automovil.encender);
+                automovil.encender(); //(automovil[encender]())
+                console.clear();
+                let perro = {
+                    raza: 'Pastor Alemán',
+                    origen: 'Alemania',
+                    pelaje: 'Lanudo',
+                    peso: '33kg',
+                    edad: 12,
+                    amigable: true,
+                    sonidos: function() {
+                        console.log('El perro ladra');
+                    }
+                };
+                perro["sonidos"]();
+
+                //MODIFICAR el contenido
+                perro["peso"] = "35kg";
+                perro.edad = 13;
+
+                console.log(perro);
+                perro.sonidos = function() {
+                    alert('El perro ladra')
+                };
+                perro.sonidos();
+                //AGREGAR ATRIBUTO
+                perro.tamanio = "Pequeño";
+                console.log(perro);
+                //ELIMINAR ATRIBUTO
+                delete perro.origen;
+                console.log(perro);
+
+                let perro2 = {
+                    propietario: {
+                        nombre: 'Juan',
+                        edad: 34,
+                        lugar: {
+                            pais: 'Chile',
+                            ciudad: 'Santiago de Chile'
+                        },
+                        direccion: ["casa 1", "casa 2"]
+                    },
+                    raza: 'Pastor Alemán',
+                    origen: 'Alemania',
+                    pelaje: 'Lanudo',
+                    peso: '30kg',
+                    edad: 11,
+                    amigable: true,
+                    sonidos: function() {
+                        console.log('El perro ladra');
+                    }
+                };
+                //acceder a elementos internos
+                console.log(perro2.propietario.lugar.pais);
+                console.log(perro2.propietario.direccion[1]); //casa 2
+
+                console.clear();
+
+                var marca = {
+                    nombre: 'Honda'
+                };
+                var modelo = 'Civic';
+                var automovil = {
+                    marca: {
+                        nombre: 'Mazda',
+                        origen: 'Japón'
+                    },
+                    modelo: '3 sport',
+                    patente: 'LJKH63',
+                    color: 'azul',
+                    kilometraje: 15000,
+                    usado: false,
+                    encender: function() {
+                        alert('automóvil ' + marca.nombre + ' ' +
+                            modelo + ' encendido.');
+                        alert('automóvil ' + this.marca.nombre + ' ' +
+                            this.modelo + ' encendido.');
+                    }
+                };
+                automovil.encender();
+                //agregando el atributo datos
+                perro2.datos = function() {
+                    console.log("La raza del perro es", this.raza, ", tiene una edad de", this.edad, " años y el propietario es", this.propietario.nombre);
+                }
+                perro2.datos();
+
+                let alumno = {
+                    representante: {
+                        nombre: 'Maria',
+                        edad: 49,
+                        lugar: {
+                            pais: 'Chile',
+                            ciudad: 'Santiago de Chile'
+                        },
+                    },
+                    nombre: 'Manuel',
+                    apellido: 'Perez',
+                    peso: '45kg',
+                    edad: 10,
+                    amigable: true,
+                };
+
+                alumno.mensaje = function() {
+                    document.write("El representante del alumno ", this.nombre, " ", this.apellido, ", es ", this.representante.nombre,
+                        ", quien reside en ", this.representante.lugar.pais);
+                }
+                alumno.mensaje();
+        */
+        function dibujar() {
+            let perros = [{
+                raza: 'Pastor Alemán',
+                origen: 'Alemania',
+                pelaje: 'Lanudo',
+                peso: '33kg',
+                edad: 12
+            }, {
+                raza: 'Poodle',
+                origen: 'Francia',
+                pelaje: 'Lanudo',
+                peso: '20kg',
+                edad: 14
+            }, ];
+            //pintar la tabla dinamicamente
+            var body = document.getElementsByTagName("body");
+            body[0].innerHTML =
+                "<table>" +
+                "<thead><tr id='atributo'>  </tr></thead>" +
+                "<tbody id='tablaBody'></tbody>" +
+                "</table>";
+            //obtener los atributos
+            var titulosTabla = "";
+            for (let atributo in perros[0]) {
+                console.log(atributo);
+                //<th>atributo</th>
+                titulosTabla = titulosTabla + "<th>" + atributo + "</th>";
+            }
+            console.log(titulosTabla);
+            var titulos = document.getElementById('atributo');
+            titulos.innerHTML = titulosTabla;
+
+            //obtener los valores de los atributos
+            //<tr><td></td><td></td><td></td><td></td><td></td></tr> <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            var filas = "";
+            for (let i = 0; i < perros.length; i++) { //recorrer el arreglo
+                let valores = "";
+                for (let atributo in perros[i]) { //recorrer el objeto
+                    //perros[i][atributo]
+                    //<td>valor</td>
+                    valores = valores + "<td>" + perros[i][atributo] + "</td>";
+                }
+                //<tr>valores</tr>
+                filas = filas + "<tr>" + valores + "</tr>";
+            }
+            document.getElementById("tablaBody").innerHTML = filas;
+
+        }
+    </script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid blue;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button onclick="dibujar()">dibujar tabla</button>
+</body>
+
+</html>
