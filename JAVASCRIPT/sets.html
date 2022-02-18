@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SETS</title>
+    <script>
+        //SETS (ITERABLE)
+        var set1 = new Set();
+        console.log(set1);
+        var set2 = new Set("ahooolaooaaohhoollloo");
+        console.log(set2);
+        var set3 = new
+        Set([1, 2, 3, 4, 5]);
+        console.log(set3);
+
+        //ADD agregar
+        set1.add("a");
+        set1.add(1);
+        set1.add(true);
+        set1.add("aEa");
+        console.log("set1", set1);
+
+        //DELETE -> elimina por medio del nombre elemento
+        set1.delete("a");
+        console.log("set1", set1);
+
+        //RECORRER
+        set1.forEach(element => {
+            console.log("foreach", element);
+        });
+
+        set1.forEach(function(element) {
+            console.log("foreach2", element);
+        });
+
+        //SIZE
+        console.log("set1 size", set1.size);
+        console.log("set2 size", set2.size);
+
+        //ITERAR (for...of)
+        for (let element of set1) {
+            console.log("for of", element)
+        }
+
+        //BUSCAR HAS
+        console.info("has a", set1.has("a")); //false
+        console.info("has aEa", set1.has("aEa")); //true
+
+
+        //entries, values, keys
+        console.log("entries", set1.entries());
+        for (let element of set1.entries()) {
+            console.info(element);
+        }
+        console.log("");
+        console.log("values", set1.values());
+        for (let element of set1.values()) {
+            console.info(element);
+        }
+        console.log("");
+        console.log("keys", set1.keys());
+        for (let element of set1.keys()) {
+            console.info(element);
+        }
+
+        //ELIMINAR TODO
+        set1.clear();
+        console.log("set1 clear()", set1);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

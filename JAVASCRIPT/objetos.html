@@ -145,6 +145,8 @@
                 peso: '20kg',
                 edad: 14
             }, ];
+            console.dir(perros);
+            console.log(perros);
             //pintar la tabla dinamicamente
             var body = document.getElementsByTagName("body");
             body[0].innerHTML =
@@ -152,7 +154,16 @@
                 "<thead><tr id='atributo'>  </tr></thead>" +
                 "<tbody id='tablaBody'></tbody>" +
                 "</table>";
+
             //obtener los atributos
+            var llaves = Object.keys(perros[0]);
+            console.log("llaves ", llaves);
+            console.log();
+            var valores = Object.values(perros[0]);
+            console.dir("valores", valores);
+            var parValores = Object.entries(perros[0]);
+            console.log("par valores", parValores);
+
             var titulosTabla = "";
             for (let atributo in perros[0]) {
                 console.log(atributo);
