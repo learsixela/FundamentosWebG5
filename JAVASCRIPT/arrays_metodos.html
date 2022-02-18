@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Metodos Array</title>
+    <script>
+        var arreglo = [];
+        console.log(arreglo, arreglo.length);
+        //push, agrega al final
+        arreglo.push("a");
+        console.log(arreglo, arreglo.length);
+        arreglo.push("e", "i", "o", "e");
+        console.log(arreglo, arreglo.length);
+        //var set = new Set(arreglo);
+        //console.log(set);
+        arreglo.push({
+            nombre: 'Isra',
+            apellido: "Palma"
+        });
+        console.log(arreglo, arreglo.length);
+        arreglo.push([2, 4, 6, 8, 0]);
+        console.log(arreglo, arreglo.length);
+
+        let perros = [{
+            raza: "Yorkshire Terrier",
+            color: "marrón,negro y gris "
+        }, {
+            raza: "Shar Pei ",
+            color: "marrón "
+        }, {
+            raza: "Schnauzer gigante",
+            color: "negro"
+        }];
+        perros.push({
+            raza: "Pastor Aleman",
+            color: "marron y negro"
+        }, {
+            raza: "Beagle",
+            color: "blanco,marrón y negro"
+        }, {
+            raza: "Afgano",
+            color: "negro"
+        });
+        console.dir(perros); //lenght 6
+        console.log(perros.pop()); //eliminar el ultimo elemento
+        console.dir(perros); //lenght 5
+        var eliminado = perros.shift(); //eliminar el primer elemento
+        console.log(eliminado);
+        console.dir(perros); //lenght 4
+
+        //split, subdivide por caracter repetitivo (delimitador ;)
+        var cliente = "juan,rodrigo;campos;37;a@a.cl;12312452";
+        var arrCliente = cliente.split(";");
+        console.log(arrCliente);
+
+        var oCliente = {
+            nombre: arrCliente[0],
+            apellido: arrCliente[1],
+            edad: arrCliente[2],
+            email: arrCliente[3],
+            rut: arrCliente[4]
+        }
+        console.clear();
+        console.dir(oCliente);
+
+        var fecha = "18/02/2022";
+        //CSV
+        var arregloFecha = fecha.split("/");
+        console.log(fecha, arregloFecha);
+        var fecha2 = arregloFecha.join("-");
+        console.log(fecha2); //"18-02-2022"
+
+        var pokemones = ["pikachu", "ditto", "bulbasaur"];
+        console.log(pokemones.join(" - "));
+
+        //MAP
+        var nueva_fecha = arregloFecha.map(function(f) {
+            console.log(f);
+            //EVALUAR Y PROCESAR
+            return f
+        });
+        console.log(nueva_fecha);
+
+        var clientes = [{
+            nombre: 'Juan',
+            edad: 28
+        }, {
+            nombre: 'Carlos',
+            edad: 17
+        }, {
+            nombre: 'Karla',
+            edad: 27
+        }, ];
+
+        var nuevo_cliente = clientes.map(function(c) {
+            console.dir(c);
+            if (c.edad > 18) {
+                c.informacion = "Mayor de edad";
+            } else {
+                c.informacion = "Menor de edad";
+            }
+            return c;
+        });
+
+        console.log(nuevo_cliente);
+
+        var numeros = [10, 15, 20, 25, 30];
+        var nuevos_numeros = numeros.map(function(n) {
+            console.log(n);
+            return n * 2;
+        });
+        console.log(nuevos_numeros);
+
+        var powNumeros = numeros.map(function(n) {
+            return Math.pow(n, 2);
+        });
+        console.log(powNumeros);
+        console.clear();
+        console.log(numeros);
+        //REDUCE
+        //arreglo.reduce(callback(acumulador,valorActual[, índice[, array]])[,valorInicial])
+        var reduce = numeros.reduce(function(ac, va) {
+            console.log(ac, va);
+            return ac + va;
+        }, 0);
+
+        console.log(reduce);
+        var pok = pokemones.reduce(function(ac, va) {
+            console.log(ac, va);
+            return ac + va;
+        }, '');
+        console.log(pok);
+
+        var nombres = clientes.reduce(function(ac, va) {
+            console.log(ac, va.nombre);
+            return ac + ";" + va.nombre;
+        }, "");
+        //ac=";juan;carlos;Karla"
+        console.log(nombres);
+
+        //var nuevoArreglo =arreglo.filter(callback(currentValue[,index[, array]])[, thisArg])
+        var nuevoArreglo = clientes.filter(function(cliente) {
+            return cliente.edad >= 18;
+        });
+        console.log(nuevoArreglo);
+
+        var experiencias = [{
+            titulo: "Practica",
+            anos: 1,
+        }, {
+            titulo: "Programador Junior",
+            anos: 2,
+        }, {
+            titulo: "Programador Senior",
+            anos: 4,
+        }, {
+            titulo: "Jefe de proyecto",
+            anos: 5,
+        }];
+        var masdedos = experiencias.filter(function(exp) {
+            return exp.anos > 2;
+        });
+        console.log(masdedos);
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
