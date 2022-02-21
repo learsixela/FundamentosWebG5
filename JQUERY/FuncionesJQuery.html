@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function() {
+            //3 formas (etiqueta, clase, id) para dar funcionalidad 
+            //$('forma').accion(function(){});
+            //a traves de la etiqueta
+            $('p').click(function() {
+                let texto = $('#titulo').text();
+                alert(texto);
+            });
+
+            //a traves de la clase
+            $('.claseSpan').click(function() {
+                //cambiando informacion interna
+                $('#titulo').text("Esto es otro texto");
+
+            });
+
+            //a traves del ID(#)
+            $('#titulo').click(function() {
+                let texto = $('#titulo').text();
+                alert(texto);
+            });
+
+            //let button = document.getElementById('button');
+            //button.addEventListener('click', function(){
+            // alert('click sobre el botón');
+            //});
+            $("#button").click(function() {
+                alert('click sobre el botón');
+            });
+            //efectos, CSS, Modificar,Eventos
+
+            //HIDE() -> ocultar
+            $("#btn1").click(function() {
+                $("#nombre").hide(); //a traves del ID
+                $(".container").hide();
+
+            });
+            //SHOW() -> mostrar
+            $('#btn2').click(function() {
+                $("#nombre").show();
+                $(".container").show();
+            });
+            //TOGGLE() -> ocultar o mostrar
+            $('#btn3').click(function() {
+                $("#nombre").toggle();
+                $(".container").toggle();
+            });
+            //--
+            //SLIDEUP SLIDEDOWN SLIDETOGGLE
+
+            $("#btn4").click(function() {
+                $(".container").slideUp();
+            });
+            $("#btn5").click(function() {
+                $(".container").slideDown();
+            });
+            $("#btn6").click(function() {
+                $(".container").slideToggle();
+            });
+
+            //FADEOUT FADEIN
+            $("#btn7").click(function() {
+                $(".container").fadeOut("slow");
+            });
+            $("#btn8").click(function() {
+                $(".container").fadeIn(4000); //segundos
+            });
+            $("#btn9").click(function() {
+                $(".container").fadeToggle(3000);
+            });
+            //modificacion -> agregar codigo entre etiqueta
+            //text()
+            //val()
+            $("#btn10").click(function() {
+                let nombreVal = $("#button").val(); //el valor del input
+                let tituloText = $("#titulo").text(); //el valor o texto entre la etiqueta
+                console.log("el nombre val es", nombreVal);
+                console.log("el titulo text es", tituloText);
+                let inner = $("#titulo")[0];
+                console.log("EL innerHTML es", inner.innerHTML);
+                $("#nombre").val("Israel"); //asignar valor al input
+            });
+
+            //before -> agregar antes de la etiqueta
+            $("#btn11").click(function() {
+                $("#titulo").before("<h1>texto before</h1>");
+            });
+            //after -> agregar despues de la etiqueta
+            $("#btn12").click(function() {
+                $("#titulo").after("<h3>texto after</h3>");
+            });
+
+            //append()-> agregar internamente manteniendo el contenido
+            $("#btn13").click(function() {
+                $("#titulo").append("<p>texto append</p>");
+            });
+            //html() -> agrega internamente, pero borra todo lo anterior
+            $("#btn14").click(function() {
+                $("#titulo").html("<p>texto html</p>");
+            });
+            //prepend -> agregar internamente al principio
+            $("#btn15").click(function() {
+                $("#titulo").prepend("<p>texto prepend</p>");
+            });
+
+            //ATTR()
+            $("#btn16").click(function() {
+                $("#imagenJQ").attr("alt", "Imagen JQ");
+                $("#imagenJQ").attr("width", 500);
+                $(".container").attr("style", "color:red;background-color:green");
+            });
+
+            //CSS
+            $("#btn17").click(function() {
+                $("#titulo").css("color", "blue");
+                $("#titulo").css("font-size", 45);
+            });
+            //addclass
+            $("#btn18").click(function() {
+                $("#button").addClass("modificaBtn");
+
+            });
+            //removeclass
+            $("#btn19").click(function() {
+                $("#btn1").removeClass();
+
+            });
+
+            //final jquery
+        });
+    </script>
+    <style>
+        .modificaBtn {
+            width: 200px;
+            background-color: blueviolet;
+            color: white;
+            border-radius: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <p>buen dia clase</p>
+        <h2 id="titulo">Buena semana</h2>
+        <span class="claseSpan">Hola JQuery</span>
+        <br>
+        <input type="text" id="nombre" name="nombre">
+        <br>
+        <input type="button" id="button" value="Calcular">
+        <br>
+        <img src="assets/img/jquery.png" id="imagenJQ">
+    </div>
+    <br>
+    <hr>
+    <div>
+
+        <button id="btn1" class="modificaBtn"> ocultar(hide)</button>
+        <button id="btn2"> mostrar(show)</button>
+        <button id="btn3"> ocultar/mostrar(toggle)</button>
+        <br>
+        <hr>
+        <button id="btn4"> slideup</button>
+        <button id="btn5"> slidedown</button>
+        <button id="btn6"> slidetoggle</button>
+        <br>
+        <hr>
+        <button id="btn7"> fadeout</button>
+        <button id="btn8"> fadein</button>
+        <button id="btn9"> fadetoggle</button>
+        <br>
+        <hr>
+        <button id="btn10"> val()</button>
+        <button id="btn11"> before()</button>
+        <button id="btn12"> after()</button>
+        <button id="btn13"> append()</button>
+        <button id="btn14"> html()</button>
+        <button id="btn15"> prepend()</button>
+        <br>
+        <hr>
+        <!-- attr-->
+        <button id="btn16"> attr()</button>
+        <button id="btn17"> css()</button>
+        <button id="btn18"> addClass()</button>
+        <button id="btn19"> removeClass()</button>
+    </div>
+
+</body>
+
+</html>

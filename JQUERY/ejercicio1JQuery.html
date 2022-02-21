@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+
+            $("#btn1").click(function() {
+                $('td:gt(4)').css('color', "red");
+            });
+            $("#btn2").click(function() {
+                $('td:lt(4)').css('color', "red");
+            });
+            //First  y Last
+            $("#btn3").click(function() {
+                $('td:first').css('color', "green");
+                $('td:last').css('color', "green");
+            });
+            //igual a 
+            $("#btn4").click(function() {
+                $('td:eq(4)').css('color', "green");
+            });
+
+            //final jquery
+        });
+    </script>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid blue;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>Row 1</td>
+            <td>Row 2</td>
+            <td>Row 3</td>
+        </tr>
+        <tr>
+            <td>Row 4</td>
+            <td>Row 5</td>
+            <td>Row 6</td>
+        </tr>
+        <tr>
+            <td>Row 7</td>
+            <td>Row 8</td>
+            <td>Row 9</td>
+        </tr>
+    </table>
+    <button id="btn1">gt(n) > </button>
+    <button id="btn2">lt(n) < </button>
+    <button id="btn3">first - last</button>
+    <button id="btn4">eq(n) </button>
+</body>
+
+</html>
