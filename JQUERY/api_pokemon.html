@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Pokemon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            //for (let i = 1; i < 500; i++) {
+            //    $(".container").append('<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + i + '.png">');
+            //}
+
+            //GET
+            //$.get("url",callback,tipo);
+            for (let i = 1; i < 10; i++) {
+                $.get("https://pokeapi.co/api/v2/pokemon/" + i, function(respuesta) {
+                    console.dir(respuesta);
+                    console.log(respuesta.name, respuesta.weight);
+                    console.log(respuesta.sprites.back_default);
+                    //console.log(respuesta.types[0].type.name, respuesta.types[1].type.name);
+                    for (let elemento of respuesta.types) {
+                        console.log(elemento.type.name);
+                    }
+                }, "json");
+            }
+
+
+
+
+            //final jquery
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">-->
+
+    </div>
+</body>
+
+</html>
