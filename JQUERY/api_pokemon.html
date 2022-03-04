@@ -27,6 +27,31 @@
                 }, "json");
             }
 
+            $.ajax({
+                type: "get",
+                url: "https://pokeapi.co/api/v2/pokemon/1",
+                dataType: "json",
+                success: function(res) {
+                    localStorage.nombre = res.name;
+                    localStorage.respuesta = res;
+                    localStorage.setItem("imagen", res.sprites.back_default);
+                    //sessionStorage
+                    sessionStorage.setItem("imagen", res.sprites.back_default);
+
+                },
+                error: function(res) {
+
+                },
+                async: true,
+            });
+
+            $('button').click(function() {
+                let imagen = sessionStorage.getItem("imagen");
+                $(".container").append('<img src="' + imagen + '" >');
+                //sessionStorage.removeItem("imagen"); //eliminar item
+                localStorage.clear(); //eliminar todos los item
+            });
+
             //final jquery
         });
     </script>
@@ -35,6 +60,7 @@
 <body>
     <div class="container">
         <!-- <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png">-->
+        <button>cargar</button>
 
     </div>
 </body>
